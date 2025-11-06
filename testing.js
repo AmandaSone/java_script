@@ -25,7 +25,7 @@ console.log('Nytt antall er:', antall); */
 //---------------------------------------------
 
 //nsole.log('Hei, jeg lærer meg java script');
-let navn = 'Amanda';
+/* let navn = 'Amanda';
 console.log('Mitt navn er:', navn);
 
 const dato = 7;
@@ -42,4 +42,13 @@ console.log('Neste år blir jeg', alder2, 'år gammel');
 const hilsen = `Hei ${navn}`;
 console.log(hilsen);
 const fødselsdato = `${dato}. ${måned} ${år}`;
-console.log('Min fødselsdato er:', fødselsdato);
+console.log('Min fødselsdato er:', fødselsdato); */
+
+//---------------------------------------------
+
+let username;
+
+document.getElementById('mySubmit').onclick = function() {
+    username = document.getElementById('myText').value;
+    document.getElementById("myH1").textContent = `Hello, ${username}!`;
+}
