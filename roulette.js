@@ -1,3 +1,19 @@
+const startBtn = document.getElementById('rouletteButton');
+
+startBtn.addEventListener('click', () => {
+    const choice = prompt("Do you want to bet on a number or a color? Type 'number' or 'color':");
+    if (choice === 'number') {
+        const bettingNum = prompt("Please enter the number you wanna bet on (1-36):");
+        gambleNum(Number(bettingNum));
+    } else if (choice === 'color') {
+        const bettingCol = prompt("Please enter the color you wanna bet on (red or black):");
+        gambleCol(bettingCol);
+    } else {
+        console.log("Invalid choice. Please type 'number' or 'color'.");
+    }
+});
+
+
 function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -18,7 +34,7 @@ winningCol = 'black';
 winningCol = 'red';
 }
 
-console.log(winningCol);
+console.log(`${winningNum} | ${winningCol}`);
 
 if (yourCol == winningCol) {
     console.log('wow, you win');
@@ -41,8 +57,7 @@ winningCol = 'black';
 winningCol = 'red';
 }
 
-console.log(winningNum);
-console.log(winningCol);
+console.log(`${winningNum} | ${winningCol}`);
 
 if (yourNum == winningNum) {
     console.log('wow, you win');
@@ -52,10 +67,3 @@ if (yourNum == winningNum) {
 
 
 }
-
-const bettingNum = prompt("Please enter the number you wanna bet on:");
-const bettingCol = prompt("Please enter the color you wanna bet on (red or black):");
-
-gambleNum(Number(bettingNum));
-console.log('-----------')
-gambleCol(bettingCol);
