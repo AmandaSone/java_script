@@ -1,16 +1,29 @@
 // <div> container variables
 const typeChoiceBox = document.getElementById('typeChoice')
 const colorChoiceBox = document.getElementById('colorChoice')
+const resultText = document.getElementById('resultText');
 
 // buttons
 const typeColor = document.getElementById('color');
 const typeNumber = document.getElementById('number');
+const playGameColor = document.getElementById('playCol');
 
+// button events
 typeColor.addEventListener('click', () => {
     typeChoiceBox.style.display = 'none';
     colorChoiceBox.style.display = 'block';
 });
+playGameColor.addEventListener('click', () => {
+    colorChoiceBox.style.display = 'none';
+    colorResult.style.display = 'block';
+    /* const chosenCol = 'black';
+    gambleCol(chosenCol) */
 
+});
+
+
+
+// roulette game functions
 
 function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -34,8 +47,10 @@ winningCol = 'red';
 
 console.log(`${winningNum} | ${winningCol}`);
 
+//wait what
 if (yourCol == winningCol) {
-    console.log('wow, you win');
+    const resultText = document.getElementById('resultText');
+    resultText.innerHTML = 'wow, you win';
 } else {
     console.log('wow, you SUCK!!');
 }
