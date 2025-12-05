@@ -1,16 +1,14 @@
-const startBtn = document.getElementById('rouletteButton');
+// <div> container variables
+const typeChoiceBox = document.getElementById('typeChoice')
+const colorChoiceBox = document.getElementById('colorChoice')
 
-startBtn.addEventListener('click', () => {
-    const choice = prompt("Do you want to bet on a number or a color? Type 'number' or 'color':");
-    if (choice === 'number') {
-        const bettingNum = prompt("Please enter the number you wanna bet on (1-36):");
-        gambleNum(Number(bettingNum));
-    } else if (choice === 'color') {
-        const bettingCol = prompt("Please enter the color you wanna bet on (red or black):");
-        gambleCol(bettingCol);
-    } else {
-        console.log("Invalid choice. Please type 'number' or 'color'.");
-    }
+// buttons
+const typeColor = document.getElementById('color');
+const typeNumber = document.getElementById('number');
+
+typeColor.addEventListener('click', () => {
+    typeChoiceBox.style.display = 'none';
+    colorChoiceBox.style.display = 'block';
 });
 
 
